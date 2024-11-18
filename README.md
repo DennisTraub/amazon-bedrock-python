@@ -1,4 +1,6 @@
 # Amazon Bedrock for Python
+---
+[![PyPI version](https://img.shields.io/pypi/v/amazon-bedrock.svg)](https://pypi.org/project/amazon-bedrock/)
 
 A Python library for easy interaction with Amazon Bedrock, providing streamlined access to foundation models and AI capabilities.
 
