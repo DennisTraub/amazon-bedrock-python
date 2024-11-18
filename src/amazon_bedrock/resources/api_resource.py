@@ -9,5 +9,5 @@ if TYPE_CHECKING:
 class APIResource:
     _client: Bedrock
 
-    def __init__(self, client: "Bedrock") -> None:
+    def __init__(self, client: Bedrock) -> None:
         self._client = client

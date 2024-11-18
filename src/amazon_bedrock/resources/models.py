@@ -3,7 +3,6 @@ from .api_resource import APIResource
 
 
 class Models(APIResource):
-
     def retrieve(self, model: str) -> Dict:
         if not model:
             raise ValueError(f"Expected a non-empty value for `model` but received {model!r}")
@@ -18,5 +17,5 @@ class Models(APIResource):
 
     def list(self) -> List[Dict]:
         kwargs = {"byInferenceType": "ON_DEMAND"}
-        models = self._client.boto3_client.list_foundation_models(**kwargs)["modelSummaries"]
+        models = self._client.bedrock_client.list_foundation_models(**kwargs)["modelSummaries"]
         return models

@@ -1,15 +1,15 @@
 import pytest
 from unittest.mock import Mock
 
-from amazon_bedrock import Bedrock
-from amazon_bedrock.resources.api_resource import APIResource
+from src.amazon_bedrock import Bedrock
+from src.amazon_bedrock.resources import APIResource
 
 
 class TestAPIResource:
     @pytest.fixture
-    def mock_bedrock(self):
+    def mock_client(self) -> Mock:
         return Mock(spec=Bedrock)
 
-    def test_init_stores_client_reference(self, mock_bedrock):
-        resource = APIResource(mock_bedrock)
-        assert resource._client == mock_bedrock
+    def test_init_sets_client_reference(self, mock_client) -> None:
+        resource = APIResource(mock_client)
+        assert resource._client == mock_client

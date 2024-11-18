@@ -1,3 +1,3 @@
-from .bedrock import Bedrock
+from ._client import Bedrock
 
 __all__ = ["Bedrock"]
