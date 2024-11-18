@@ -13,7 +13,7 @@ A Python library for easy interaction with Amazon Bedrock, providing streamlined
 Install the package using pip:
 
 ```shell
-pip install amazon-bedrock-python
+pip install amazon-bedrock
 ```
 
 ## Quick Start
@@ -27,6 +27,11 @@ models = client.models.list()
 model_ids = [model["modelId"] for model in models]
 
 print(model_ids)
+
+model_id = "claude-3-5-haiku"
+model = client.models.retrieve(model_id)
+
+print(model)
 ```
 
 ## Authentication

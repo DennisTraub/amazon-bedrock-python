@@ -2,9 +2,9 @@
 
 from setuptools import find_packages, setup
 
-version = '0.0.1'
+version = '0.0.3'
 requires = [
-    'botocore>=1.35.26'
+    'boto3>=1.35.26'
 ]
 
 
@@ -13,10 +13,12 @@ setup(
     version=version,
     description='A simplified Python client for Amazon Bedrock',
     long_description=open('README.md').read(),
+    long_description_content_type='text/markdown',
     author='Dennis Traub',
     url='https://github.com/boto/boto3',
     author_email='dennis.traub@gmail.com',
-    packages=find_packages(exclude=['tests*']),
+    package_dir={'': 'src'},  # Add this line
+    packages=find_packages(where='src'),  # Modify this line
     install_requires=requires,
     license="MIT",
     python_requires=">= 3.8",
