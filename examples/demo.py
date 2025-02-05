@@ -1,4 +1,4 @@
-from src.amazon_bedrock import Bedrock
+from amazon_bedrock import Bedrock
 from pprint import pprint
 
 client = Bedrock(region="us-west-2")

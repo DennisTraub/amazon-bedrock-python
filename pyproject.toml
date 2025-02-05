@@ -1,0 +1,39 @@
+[project]
+name = "amazon-bedrock"
+dynamic = ["version"]
+description = "A simple client library for Amazon Bedrock"
+readme = "README.md"
+authors = [
+    { name = "Dennis Traub", email = "dennis.traub@gmail.com" }
+]
+license = { text = "MIT" }
+requires-python = ">=3.8"
+dependencies = [
+    "boto3>=1.36.14",
+    "pydantic>=2.10.6",
+]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+]
+
+[project.urls]
+Source = "https://github.com/DennisTraub/amazon-bedrock-python"
+
+[tool.hatch.version]
+path = "src/amazon_bedrock/__init__.py"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+amazon-bedrock = "amazon_bedrock:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
